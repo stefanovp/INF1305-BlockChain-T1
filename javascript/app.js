@@ -1,8 +1,5 @@
-const contractABI = electoralVotingMetadata.output.abi;
-const contractByteCode = electoralVotingDeploy.data.bytecode.object;
-
-var contractToBeDeployed;
-var totalCandidates = 0;
+const contractMetadata = JSON.parse("./contractMetadata.json");
+const contract = web3.eth.contract(contractMetadata.abi, contractMetadata.address);
 
 const ethEnabled = () => {
     if (window.ethereum) {
@@ -17,4 +14,11 @@ const ethEnabled = () => {
 
 if (!ethEnabled()) {
     alert("Metamask or browser with Ethereum not detected. Consider installing Metamask!");
+}
+
+async function createBill(){
+    const billDesc = $('#newBillDesc').val()
+    const billVal = $('#newBillVal').val()
+
+
 }
