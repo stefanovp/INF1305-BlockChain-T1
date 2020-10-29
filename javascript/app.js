@@ -20,7 +20,8 @@ async function createBill(){
     const billdesc = $('#newBillDesc').val();
     const billval = $('#newBillVal').val();
 
-    contract.methods.CreateBill(billdesc, billval);
+    // contract.methods.CreateBill(billdesc, billval);
+    contract.methods.CreateBill().call();
 }
 
 async function payBill(){
