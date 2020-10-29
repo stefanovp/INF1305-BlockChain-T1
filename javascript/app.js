@@ -17,8 +17,15 @@ if (!ethEnabled()) {
 }
 
 async function createBill(){
-    const billDesc = $('#newBillDesc').val()
-    const billVal = $('#newBillVal').val()
+    const billdesc = $('#newBillDesc').val();
+    const billval = $('#newBillVal').val();
 
-
+    contract.methods.CreateBill(billdesc, billval);
 }
+
+async function payBill(){
+    const billid = $('billId').val();
+
+    contract.methods.PayBill(billid);
+}
+
