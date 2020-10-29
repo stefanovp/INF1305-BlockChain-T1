@@ -29,5 +29,3 @@ async function payBill(){
     contract.methods.PayBill(billid);
 }
 
-async function 
-
