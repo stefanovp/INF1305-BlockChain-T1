@@ -1,4 +1,4 @@
-const contractMetadata = $.getJson('./contractMetadata.json');
+const contractMetadata = $.getJSON('./contractMetadata.json');
 const contract = web3.eth.contract(contractMetadata.abi, contractMetadata.address);
 
 const ethEnabled = () => {
@@ -28,4 +28,6 @@ async function payBill(){
 
     contract.methods.PayBill(billid);
 }
+
+async function 
 
