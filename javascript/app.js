@@ -1,4 +1,4 @@
-const contractMetadata = JSON.parse("./contractMetadata.json");
+const contractMetadata = $.getJson('./contractMetadata.json');
 const contract = web3.eth.contract(contractMetadata.abi, contractMetadata.address);
 
 const ethEnabled = () => {
