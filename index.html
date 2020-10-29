@@ -31,18 +31,18 @@
             <p class="text-center">Loading...</p>
           </div>
           <div id="content">
-            <div class="col-sm-6" id="createBill">
+            <div class="col-sm-4" id="createBill">
               <h3> Crie uma conta </h3>
-              <form onSubmit="App.createTask(); return false;">
-                <input id="newBillDesc" type="text" class="form-control" placeholder="Insira e descricao..." required>
+              <form onSubmit="createBill(); return false;">
+                <input id="newBillDesc" type="text" class="form-control" placeholder="Insira e descricao" required>
                 <input id="newBillVal" type="text" class="form-control" placeholder="Insira o valor" required>
                 <input type="submit" hidden="">
               </form>
             </div>
-            <div class="col-sm-6" id="payBill">
+            <div class="col-sm-4" id="payBill">
               <h3> Pague uma conta </h3>
-              <form onSubmit="App.createTask(); return false;">
-                <input id="billId" type="text" class="form-control" placeholder="Insira e descricao..." required>
+              <form onSubmit="payBill(); return false;">
+                <input id="billId" type="text" class="form-control" placeholder="Insira e descricao" required>
                 <input type="submit" hidden="">
               </form>
             </div>

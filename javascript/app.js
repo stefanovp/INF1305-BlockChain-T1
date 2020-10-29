@@ -33,6 +33,25 @@ async function renderBills(){
     const billCount = contract.billQty();
     for(var i = 0; i < billCount; i++){
         const bill = contract.bills(i);
+
+        const billId = bill[0].toNumber()
+        const billDesc = task[1]
+        const billVal = task[2]
+        const billIsPaid = task[3]
+
+        // Create bill html
+        const $newBillTemplate = $billTemplate.clone()
+        $newBillTemplate.find('.billDesc').html(taskContent)
+        $newBillTemplate.find('.billVal').html(taskContent)
+        $newBillTemplate.find('.billStatus').html(taskContent)
+
+        if (billIsPaid) {
+            $('#paidBillList').append($newBillTemplate)
+          } else {
+            $('#pendingBillList').append($newTaskTemplate)
+          }
+
+        $newBillTemplate.show()
     }
 }
 
