@@ -28,5 +28,7 @@ contract PagoEmConta
     {
         if(!bills[_contaId].isPaid)
             bills[_contaId].isPaid = true;
+        else
+            return;
     }
 }
