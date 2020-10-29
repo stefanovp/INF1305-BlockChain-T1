@@ -2,26 +2,31 @@ pragma solidity >=0.4.22 <0.7.0;
 
 contract PagoEmConta 
 {
-    struct Conta 
+    struct Bill 
     {
-        uint id,
-        string description,
-        uint value,
-        bool isPaid
+        uint id;
+        string description;
+        uint value;
+        bool isPaid;
     }
 
-    uint contasQty = 0;
-    mapping(uint => Conta) public contas;
+    uint billQty = 0;
+    mapping(uint => Bill) public bills;
     
-    function AddConta(string memory _desc, uint memory _value) public 
+    constructor() public 
     {
-        contas[contasQty] = Conta(contasQty, _desc, _value);
-        contasQty++;
+        CreateBill("Boleto Puc Nov", 4000);
     }
 
-    function PagarConta(uint _contaId) public
+    function CreateBill(string memory _desc, uint _value) public 
     {
-        if(!contas[_contaId].isPaid)
-            contas[_contaId].isPaid = true;
+        bills[billQty] = Bill(billQty, _desc, _value, false);
+        billQty++;
+    }
+
+    function PayBill(uint _contaId) public
+    {
+        if(!bills[_contaId].isPaid)
+            bills[_contaId].isPaid = true;
     }
 }
