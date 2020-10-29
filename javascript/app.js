@@ -1,7 +1,8 @@
 console.log("teste 20");
 
 const contractMetadata = $.getJSON('./javascript/contractMetadata.json').done();
-const contract = web3.eth.contract(result.abi, contractMetadata.address);
+const contract = web3.eth.contract(contractMetadata.abi, contractMetadata.address);
+const contractInstance = contract.at(contractMetadata.address);
 console.log(contractMetadata);
 console.log(contract);
 
