@@ -1,5 +1,7 @@
 const contractMetadata = $.getJSON('./javascript/contractMetadata.json');
 const contract = web3.eth.contract(contractMetadata.abi, contractMetadata.address);
+console.log(contractMetadata);
+console.log(contract);
 
 const ethEnabled = () => {
     if (window.ethereum) {
@@ -20,8 +22,7 @@ async function createBill(){
     const billdesc = $('#newBillDesc').val();
     const billval = $('#newBillVal').val();
 
-    // contract.methods.CreateBill(billdesc, billval);
-    contract.methods.CreateBill().call();
+    contract.methods.CreateBill(billdesc, billval);
 }
 
 async function payBill(){
