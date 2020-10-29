@@ -136,7 +136,7 @@ App = {
   }
   
   $(() => {
-    $(window).load(() => {
+    $(window).on('load', () => {
       App.load()
     })
   })
