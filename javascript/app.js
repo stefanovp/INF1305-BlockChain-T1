@@ -1,4 +1,5 @@
-const contractMetadata = $.getJSON('./javascript/contractMetadata.json');
+console.log("teste 0");
+const contractMetadata = $.getJSON('./javascript/contractMetadata.json').responseJSON;
 const contract = web3.eth.contract(contractMetadata.abi, contractMetadata.address);
 console.log(contractMetadata);
 console.log(contract);
