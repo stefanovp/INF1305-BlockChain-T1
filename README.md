@@ -12,5 +12,5 @@ A princípio nenhuma configuração é necessária para executar o programa. Bas
 O contrato foi implantado na rede de testes Kovan. Caso seja feito um redeploy, ou deploy em outras redes, o campo 'address' no arquivo 'contractMetadata.json' deverá ser atualizado com o endereço do novo contrato implantado para que o DApp funcione.
 
 ## Disclaimer
-Esse projeto é uma prova de conceito e objetiva aprendizagem do funcionamento e desenvolvimento de contratos inteligentes. A interface deixa a desejar DApp, assim como log de eventos/erros.
+Esse projeto é uma prova de conceito e objetiva aprendizagem do funcionamento e desenvolvimento de contratos inteligentes. A interface deixa muito a desejar, assim como o log de eventos/erros.
 
