@@ -9,6 +9,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/style.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,48 +24,90 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="https://stefanovp.github.io/INF1305-BlockChain-T1/" target="_blank">Pago em Conta</a>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <main role="main" class="col-lg-12 d-flex justify-content-center">
-          <div id="loader" class="text-center">
-            <p class="text-center">Loading...</p>
-          </div>
-          <div id="content">
-            <div class="col-sm-4" id="createBill">
-              <h3> Crie uma conta </h3>
-              <form onSubmit="createBill(); return false;">
-                <input id="newBillDesc" type="text" class="form-control" placeholder="Insira e descricao" required>
-                <input id="newBillVal" type="text" class="form-control" placeholder="Insira o valor" required>
-                <input type="submit" hidden="">
-              </form>
-            </div>
-            <div class="col-sm-4" id="payBill">
-              <h3> Pague uma conta </h3>
-              <form onSubmit="payBill(); return false;">
-                <input id="billId" type="text" class="form-control" placeholder="Insira e descricao" required>
-                <input type="submit" hidden="">
-              </form>
-            </div>
-            <ul id="pendingBillList" class="list-unstyled">
-              <div class="billTemplate" class="checkbox" style="display: none">
-                <label>
-                  <i class="fas fa-camera"></i>
-                  <span class="billDesc">Bill content goes here...</span>
-                  <span class="billVal">Bill value goes here...</span>
-                  <span class="billStatus">Bill status goes here...</span>
-                </label>
-              </div>
-            </ul>
-            <ul id="paidBillList" class="list-unstyled">
-            </ul>
-          </div>
-        </main>
-      </div>
-    </div>
+    <main role="main">
 
-    <!-- <script src="app.js"></script> -->
-  </body>
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3 text-center">Conta Certa</h1>
+          <p class="text-center"> O app pra você administrar todas as suas contas em um lugar só. Pague e pesquise suas contas, quaisquer que sejam, em uma única blockchain. </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-1" id="createBill">
+            <h3 class="text-center"> Crie uma conta </h3>
+            <br>
+            <form onSubmit="createBill(); return false;">
+              <label> Descrição </label>
+              <input id="newBillDesc" type="text" class="form-control" placeholder="string" required>
+              <br>
+              <label> Valor </label>
+              <input id="newBillVal" type="text" class="form-control" placeholder="número inteiro" required>
+              <br>
+              <input type="submit" value="Criar">
+            </form>
+          </div>
+          <div class="col-sm-4 col-md-offset-1" id="payBill">
+              <h3 class="text-center"> Pague uma conta </h3>
+              <br>
+              <form onSubmit="payBill(); return false;">
+                <label> Identificador da conta </label>
+                <input id="billId" type="text" class="form-control" placeholder="Id" required>
+                <br>
+                <input type="submit" value="Pagar" class="center">
+              </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row table-row">
+          <h3 class="text-center">Contas não pagas</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Descricao</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Foi paga?</th>
+                </tr>
+              </thead>
+              <tbody id="pendingBillList">
+                
+              </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="row table-row">
+          <h3 class="text-center">Contas pagas</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Descricao</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Foi paga?</th>
+                </tr>
+              </thead>
+              <tbody id="paidBillList">
+                
+              </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container text-center">
+      <p>© Stefano Vivacqua 2020</p>
+    </footer> 
+
+</body>
 </html>

@@ -1,21 +1,12 @@
-main {
-    margin-top: 60px;
+  .jumbotron {
+      color: black;
+      background: linear-gradient(to right, #2e7be0 0%, #89fbba 100%);
   }
 
   #content {
     display: none;
   }
 
-  form {
-    width: 350px;
-    margin-bottom: 10px;
-  }
-
-  ul {
-    margin-bottom: 0px;
-  }
-
-  #completedTaskList .content {
-    color: grey;
-    text-decoration: line-through;
+  .table-row{
+      min-height: 300px;
   }

@@ -15,7 +15,9 @@ contract PagoEmConta
     
     constructor() public 
     {
-        CreateBill("Boleto Puc Nov", 4000);
+        CreateBill("Boleto Puc Novembro", 4100);
+        CreateBill("Light Novembro", 550);
+        CreateBill("IPTU 2020", 360);
     }
 
     function CreateBill(string memory _desc, uint _value) public 
@@ -30,5 +32,10 @@ contract PagoEmConta
             bills[_contaId].isPaid = true;
         else
             return;
+    }
+
+    function getBillQty() public
+    {
+        return billQty;
     }
 }
