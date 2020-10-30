@@ -1,10 +1,8 @@
-console.log("teste 20");
+let contractMetadata;
 
-const contractMetadata = $.getJSON('./javascript/contractMetadata.json').done();
-const contract = web3.eth.contract(contractMetadata.abi, contractMetadata.address);
-const contractInstance = contract.at(contractMetadata.address);
-console.log(contractMetadata);
-console.log(contract);
+const contractMetadata = $.getJSON('./javascript/contractMetadata.json', function(result) {
+contract = new web3.eth.Contract(result.abi, result.address);
+});
 
 const ethEnabled = () => {
     if (window.ethereum) {
@@ -22,16 +20,17 @@ if (!ethEnabled()) {
 }
 
 async function createBill(){
+    console.log('Creating bill');
     const billdesc = $('#newBillDesc').val();
     const billval = $('#newBillVal').val();
 
-    contract.methods.CreateBill(billdesc, billval);
+    contract.methods.CreateBill(billdesc, billval).send();
 }
 
 async function payBill(){
     const billid = $('billId').val();
 
-    contract.methods.PayBill(billid);
+    contract.methods.PayBill(billid).send();
 }
 
 async function renderBills(){
