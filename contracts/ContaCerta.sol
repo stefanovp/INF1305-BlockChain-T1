@@ -1,6 +1,6 @@
 pragma solidity >=0.4.22 <0.7.0;
 
-contract PagoEmConta 
+contract ContaCerta 
 {
     struct Bill 
     {
@@ -8,6 +8,7 @@ contract PagoEmConta
         string description;
         uint value;
         bool isPaid;
+        address payer;
     }
 
     uint billQty = 0;
@@ -22,19 +23,23 @@ contract PagoEmConta
 
     function CreateBill(string memory _desc, uint _value) public 
     {
-        bills[billQty] = Bill(billQty, _desc, _value, false);
+        require(bytes(_desc).length > 0, "Description cant be empty.");
+        require(_value > 0, "Value must be greater than zero.");
+        
+        bills[billQty] = Bill(billQty, _desc, _value, false, address(0));
         billQty++;
     }
 
     function PayBill(uint _contaId) public
     {
-        if(!bills[_contaId].isPaid)
-            bills[_contaId].isPaid = true;
-        else
-            return;
+        require(!bills[_contaId].isPaid, "Bill already payed by someone.");
+        
+        bills[_contaId].isPaid = true;
+        bills[_contaId].payer = msg.sender;
+        
     }
 
-    function getBillQty() public
+    function getBillQty() public view returns (uint)
     {
         return billQty;
     }

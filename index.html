@@ -46,7 +46,7 @@
               <label> Valor </label>
               <input id="newBillVal" type="text" class="form-control" placeholder="número inteiro" required>
               <br>
-              <input type="submit" value="Criar">
+              <button type="submit" class="btn btn-primary mb-2">Criar</button>
             </form>
           </div>
           <div class="col-sm-4 col-md-offset-1" id="payBill">
@@ -56,7 +56,7 @@
                 <label> Identificador da conta </label>
                 <input id="billId" type="text" class="form-control" placeholder="Id" required>
                 <br>
-                <input type="submit" value="Pagar" class="center">
+                <button type="submit" class="btn btn-primary mb-2">Pagar</button>
               </form>
             </div>
         </div>
@@ -65,7 +65,7 @@
 
         <div class="row table-row">
           <h3 class="text-center">Contas não pagas</h4>
-            <table class="table">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">Id</th>
@@ -84,7 +84,7 @@
 
         <div class="row table-row">
           <h3 class="text-center">Contas pagas</h4>
-            <table class="table">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">Id</th>

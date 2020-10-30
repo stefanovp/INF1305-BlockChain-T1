@@ -1,6 +1,6 @@
   .jumbotron {
-      color: black;
-      background: linear-gradient(to right, #2e7be0 0%, #89fbba 100%);
+      color: lightgray;
+      background: rgb(42, 42, 60)
   }
 
   #content {
