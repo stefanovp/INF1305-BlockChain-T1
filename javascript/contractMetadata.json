@@ -1,6 +1,11 @@
 {
     "abi": [
         {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
             "inputs": [
                 {
                     "internalType": "string",
@@ -30,11 +35,6 @@
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
-        },
-        {
-            "inputs": [],
-            "stateMutability": "nonpayable",
-            "type": "constructor"
         },
         {
             "inputs": [
@@ -89,5 +89,5 @@
             "type": "function"
         }
     ],
-    "address": "0xd9145CCE52D386f254917e481eB44e9943F39138"
+    "address": "0x9c12998baAa7C802D191f6a1Cd01fB80a841E6c3"
 }
