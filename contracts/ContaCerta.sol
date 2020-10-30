@@ -32,6 +32,7 @@ contract ContaCerta
 
     function PayBill(uint _contaId) public
     {
+        require(_contaId <= billQty, "Bill doenst exist.");
         require(!bills[_contaId].isPaid, "Bill already payed by someone.");
         
         bills[_contaId].isPaid = true;
